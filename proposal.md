@@ -118,7 +118,9 @@ ifNullExpression:
   logicalOrExpression ‘??’ logicalOrExpression
 ```
 
-An if-null expression of the form *e1??e2* is equivalent to the expression *e1 == null? e2: e1*.
+An if-null expression of the form *e1??e2* is equivalent to the expression
+`((x) => x == null ? e2 : x)(e1)`
+where *x* is a variable that is not used in *e2*.
 
 #### 16.31 Assignable Expressions
 
@@ -141,8 +143,8 @@ assignableSelector:
 ```
 An assignable expression can be conditional or unconditional. 
 
-A conditional assignable expression of the form *e1?.identifier* is equivalent to the expression 
-`e1 == ` **null** `? ` **null** ` : e1.identifier`.
+A conditional assignable expression of the form *e?.identifier* is equivalent to the expression
+`((x) => x == null ? null : x.identifier)(e)`.
 
 An unconditional assignable expression is either:
 
