@@ -79,19 +79,18 @@ A compound assignment of the form *v op= e* is equivalent to *v=v op e*. A compo
 
 ```
 compoundAssignmentOperator:
-
-‘*=’ | 
-‘/=’ | 
-‘ ̃/=’ | 
-‘%=’ | 
-‘+=’ | 
-‘-=’ | 
-‘<<=’ | 
-‘>>=’ | 
-‘&=’ | 
-‘ˆ=’ | 
-‘|=’
-‘??=’
+  ‘*=’ | 
+  ‘/=’ | 
+  ‘ ̃/=’ | 
+  ‘%=’ | 
+  ‘+=’ | 
+  ‘-=’ | 
+  ‘<<=’ | 
+  ‘>>=’ | 
+  ‘&=’ | 
+  ‘ˆ=’ | 
+  ‘|=’
+  ‘??=’
 ;
 ``` 
 
@@ -100,10 +99,10 @@ compoundAssignmentOperator:
 #### 16.20 Conditional
 
 A conditional expression evaluates one of two expressions based on a boolean condition.
-conditionalExpression:
 
 ```
-ifNullExpression (‘ ?’ expressionWithoutCascade ‘:’ expressionWithoutCascade)?
+conditionalExpression:
+  ifNullExpression (‘ ?’ expressionWithoutCascade ‘:’ expressionWithoutCascade)?
 ;
 ```
 **Rest of section 16.20 is unchanged**
