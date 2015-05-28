@@ -74,7 +74,6 @@ See above. The proposal is strictly limited to the above syntactic transforms.
 #### 16.19.1 Compound Assignment
 
 A compound assignment of the form *v op= e* is equivalent to *v=v op e*. A compound assignment of the form *C.v op= e* is equivalent to *C.v = C.v op e*. A compound assignment of the form *e1.v op = e2* is equivalent to `((x) => x.v = x.v op e2)(e1)` where *x* is a variable that is not used in *e2*. A compound assignment of the form *e1[e2] op= e3* is equivalent to `((a, i) => a[i] = a[i] op e3)(e1, e2)` where *a* and *i* are variables that are not used in *e3*.
-;
 
 
 ```
@@ -127,15 +126,15 @@ Assignable expressions are expressions that can appear on the left hand side of 
 
 ```
 assignableExpression:
-primary (arguments* assignableSelector)+ | 
-super assignableSelector |
-identifier
+  primary (arguments* assignableSelector)+ | 
+  super assignableSelector |
+  identifier
 ;
 
 assignableSelector:
-‘[’ expression ‘]’ |
- ‘.’ identifier |
- ‘?.’ identifier 
+  ‘[’ expression ‘]’ |
+  ‘.’ identifier |
+  ‘?.’ identifier 
 ;
 ```
 An assignable expression can be conditional or unconditional. 
